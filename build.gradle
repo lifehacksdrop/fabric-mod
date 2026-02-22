@@ -11,8 +11,9 @@ repositories {
 }
 
 minecraft {
-    version = '1.21.10'
+    version '1.21.10'
     mappings channel: 'official', version: '1.21.10'
+    loader '0.13.3'
 }
 
 dependencies {
