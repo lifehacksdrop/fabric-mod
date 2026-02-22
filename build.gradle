@@ -27,7 +27,8 @@ tasks.withType(JavaCompile).configureEach {
     it.options.release = 21
 }
 
-minecraft {
-    // Use Yarn mappings (intermediary is internal)
+// Loom-specific configuration
+loom {
+    // Apply Yarn mappings
     mappings "net.fabricmc:yarn:1.21.11+build.1:v2"
 }
