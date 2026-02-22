@@ -1,6 +1,14 @@
-plugins {
-    id 'fabric-loom' version '0.14.13'
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabricmc.net/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.fabricmc:fabric-loom:1.14-SNAPSHOT'
+    }
 }
+
+apply plugin: 'fabric-loom'
 
 group = 'com.lifehacksdrop'
 version = '1.0.0'
