@@ -1,11 +1,11 @@
-package com.lifehacksdrop.persistentbobber;
+// Main mod file for the Persistent Bobber Mod
+package com.example.persistentbobber;
 
 import net.fabricmc.api.ModInitializer;
 
 public class PersistentBobberMod implements ModInitializer {
     @Override
     public void onInitialize() {
-        ModEntities.register();
-        RodEventHandler.register();
+        // Initialization code here
     }
 }
