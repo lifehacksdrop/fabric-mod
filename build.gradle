@@ -1,11 +1,15 @@
-// Gradle build file
+// Gradle build configuration for the Persistent Bobber Mod
 plugins {
-    id 'fabric-loom' version '0.10.0'
+    id 'fabric-loom' version '0.10-SNAPSHOT'
 }
 
+group 'com.lifehacksdrop'
+version '1.0.0'
+
 minecraft {
-    version = '1.17'
-    mappings channel: 'snapshot', version: '2021-06-23'
+    version '1.21.10'
+    yarn '1.21.10+build.1'
+    loader '0.13.3'
 }
 
 dependencies {
