@@ -1,14 +1,7 @@
-buildscript {
-    repositories {
-        maven { url 'https://maven.fabricmc.net/' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'net.fabricmc:fabric-loom:1.14-SNAPSHOT'
-    }
+plugins {
+    id 'fabric-loom' version '1.14.10'
+    id 'maven-publish'
 }
-
-apply plugin: 'fabric-loom'
 
 group = 'com.lifehacksdrop'
 version = '1.0.0'
@@ -18,18 +11,19 @@ repositories {
     maven { url 'https://maven.fabricmc.net/' }
 }
 
-minecraft {
-    version '1.21.10'
-    mappings channel: 'official', version: '1.21.10'
-    loader '0.13.3'
-}
-
 dependencies {
-    modImplementation 'net.fabricmc:fabric-api:0.77.0+1.21.10'
+    minecraft "com.mojang:minecraft:1.21.10"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.16.9"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.100.0+1.21.10"
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(20)
+        languageVersion = JavaLanguageVersion.of(21)
     }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
 }
