@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.15.3'  // latest Loom that supports 1.21.x
+    id 'fabric-loom' version '1.15.3'
     id 'maven-publish'
 }
 
@@ -12,16 +12,8 @@ repositories {
 }
 
 dependencies {
-    // Minecraft version
     minecraft "com.mojang:minecraft:1.21.11"
-
-    // Use intermediary mappings for proper class names
-    mappings loom.intermediary("net.fabricmc:yarn:1.21.11+build.1:v2")
-
-    // Loader
     modImplementation "net.fabricmc:fabric-loader:0.18.1"
-
-    // Fabric API matching 1.21.11
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.3+1.21.11"
 }
 
@@ -33,4 +25,9 @@ java {
 
 tasks.withType(JavaCompile).configureEach {
     it.options.release = 21
+}
+
+minecraft {
+    // Use Yarn mappings (intermediary is internal)
+    mappings "net.fabricmc:yarn:1.21.11+build.1:v2"
 }
