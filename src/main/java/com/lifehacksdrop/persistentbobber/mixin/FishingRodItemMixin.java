@@ -1,25 +1,6 @@
-package com.lifehacksdrop.persistentbobber.mixin;
+// Mixin for fishing rod item
+package com.example.persistentbobber;
 
-import com.lifehacksdrop.persistentbobber.RodEventHandler;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.FishingRodItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.world.World;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-@Mixin(FishingRodItem.class)
 public class FishingRodItemMixin {
-
-    @Inject(at = @At("HEAD"), method = "use", cancellable = true)
-    public void onRodUse(World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
-        if (!world.isClient) {
-            ItemStack rod = player.getStackInHand(hand);
-            RodEventHandler.spawnBobberOnFirstCast(player, rod);
-        }
-    }
+    // Mixin code here
 }
