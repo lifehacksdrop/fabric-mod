@@ -1,0 +1,10 @@
+# Generated .gitignore file
+.gradle/
+build/
+*.class
+*.jar
+*.war
+*.iml
+*.log
+.idea/
+.DS_Store

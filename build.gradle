@@ -1,0 +1,13 @@
+// Gradle build file
+plugins {
+    id 'fabric-loom' version '0.10.0'
+}
+
+minecraft {
+    version = '1.17'
+    mappings channel: 'snapshot', version: '2021-06-23'
+}
+
+dependencies {
+    // Add your dependencies here
+}
