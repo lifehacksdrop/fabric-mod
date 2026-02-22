@@ -1,17 +1,34 @@
-// Gradle build configuration for the Persistent Bobber Mod
-plugins {
-    id 'fabric-loom' version '0.10-SNAPSHOT'
+buildscript {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.fabricmc:fabric-loom:1.2.9'
+    }
 }
 
-group 'com.lifehacksdrop'
-version '1.0.0'
+apply plugin: 'fabric-loom'
+
+group = 'com.lifehacksdrop'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.fabricmc.net/' }
+}
 
 minecraft {
-    version '1.21.10'
-    yarn '1.21.10+build.1'
-    loader '0.13.3'
+    version = "1.21.10"
+    mappings channel: 'official', version: '1.21.10'
 }
 
 dependencies {
-    // Add your dependencies here
+    modImplementation "net.fabricmc:fabric-api:0.77.0+1.21.10"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(20) // must match JDK 20
+    }
 }
