@@ -1,2 +1,12 @@
-// settings.gradle file
-rootProject.name = 'PersistentBobberMod'
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id 'fabric-loom' version '1.2.9'
+}
+
+rootProject.name = 'persistentbobber'
