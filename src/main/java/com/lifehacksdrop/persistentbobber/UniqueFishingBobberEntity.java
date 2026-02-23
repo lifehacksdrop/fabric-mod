@@ -1,6 +1,7 @@
 // Unique fishing bobber entity class
-package com.example.persistentbobber;
+package com.lifehacksdrop.persistentbobber;
 
-public class UniqueFishingBobberEntity {
-    // Unique entity code here
+public UniqueFishingBobberEntity(EntityType<? extends FishingBobberEntity> type, World world) {
+    super(type, world);
+    this.setPersistent();
 }

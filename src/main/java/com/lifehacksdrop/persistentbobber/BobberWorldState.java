@@ -1,6 +1,6 @@
 // Class to manage world state for bobbers
-package com.example.persistentbobber;
+package com.lifehacksdrop.persistentbobber;
 
-public class BobberWorldState {
-    // World state management here
+public boolean hasBobber(UUID rodUUID) {
+    return bobbers.containsKey(rodUUID);
 }

@@ -1,1 +1,13 @@
 {"mixins": ["persistentbobber.mixins.json"]}
+
+{
+  "required": true,
+  "package": "com.lifehacksdrop.persistentbobber.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FishingRodItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
