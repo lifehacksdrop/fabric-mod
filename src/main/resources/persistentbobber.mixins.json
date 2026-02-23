@@ -1,5 +1,3 @@
-{"mixins": ["persistentbobber.mixins.json"]}
-
 {
   "required": true,
   "package": "com.lifehacksdrop.persistentbobber.mixin",
